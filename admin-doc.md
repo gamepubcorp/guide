@@ -387,10 +387,9 @@ IP관리 메뉴에 클라이언트 IP가 허용IP로 등록이 되어 있을 경
 
 #### 목록
 
-**2차 로그인 검증 실패 로그 조회**
+**Server To Server API 로그인 검증 실패 시 로그 기록 및 조회**
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/37.png?raw=true)
 
-```
-Firebase Auth 제거 후 업데이트 예정
-```
+* 상세보기 기능으로 로그인 검증 데이터 상세 조회
+* 조회 데이터를 기준으로 DB 회원 정보와 매칭 하여 이상 유무 체크 가능
