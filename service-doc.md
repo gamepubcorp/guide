@@ -97,3 +97,13 @@
 #### 3-5. PubSDK Admin - App 설정 - 비공개 키 등록
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-service/03_04_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%84%A4%EC%A0%95_%EB%B9%84%EA%B3%B5%EA%B0%9C%ED%82%A4%EB%93%B1%EB%A1%9D.png?raw=true)
+
+## 4. Apple Push Notification service (APNs) 설정
+
+#### 4-1. P8 인증서 / KeyID 전달 - https://developer.apple.com/account/resources/authkeys/list
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-service/04_01_p8%ED%8C%8C%EC%9D%BC%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.png?raw=true)
+
+#### 4-2 TeamID - https://developer.apple.com/account/#/membership/
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-service/04_02_TeamID%EC%A1%B0%ED%9A%8C.png?raw=true)
