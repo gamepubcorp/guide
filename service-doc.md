@@ -6,7 +6,7 @@
 
 | 구분 | 내용 | 설명(예시) |
 | ---- | ---- | ---- |
-|게임명	||테스트 게임|
+|게임명	| |테스트 게임|
 |Firebase 프로젝트 명칭	||TestGame|
 |스토어	||Google / IOS / One / Galaxy|
 |지원 언어	||한국어 / 영어 / 일본어 / 중국어(간체) / 중국어(번체) / 태국어 / 베트남어 ….|
@@ -15,8 +15,10 @@
 |AppPackageName - IOS||com.gamepub.pubsdktest|
 |AppPackageName - One||com.gamepub.pubsdktest|
 |AppPackageName - Galaxy||com.gamepub.pubsdktest|
-|게임서버 - 결제 보상 URL||https://domain?userId=id…|
-|게임서버 - 쿠폰 보상 URL||https://domain?userId=id…|
+|게임서버 - 결제 보상 URL(Real)|허용IP 설정에 따른 분기|https://domain?userId=id…|
+|게임서버 - 결제 보상 URL(Test)|허용IP 설정에 따른 분기|https://domain?userId=id…|
+|게임서버 - 쿠폰 보상 URL(Real)|허용IP 설정에 따른 분기|https://domain?userId=id…|
+|게임서버 - 쿠폰 보상 URL(Test)|허용IP 설정에 따른 분기|https://domain?userId=id…|
 
 --------------------
 
@@ -107,3 +109,11 @@
 #### 4-2 TeamID - https://developer.apple.com/account/#/membership/
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-service/04_02_TeamID%EC%A1%B0%ED%9A%8C.png?raw=true)
+
+## 5. Apple Store Server Notification 설정
+
+#### 5-1. 서버 응답 URL 입력 - https://appstoreconnect.apple.com/apps/{id}/appstore/info
+
+https://developer.apple.com/documentation/appstoreservernotifications
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-service/05_01_Apple_Server_Notification_URL.png?raw=true)
