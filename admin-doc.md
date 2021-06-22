@@ -2,20 +2,20 @@
 
 ## 관리자 로그인
 
-### 하이웍스 아이디로 로그인
+### 아이디로 로그인
 
-#### 관리자 페이지 접근 후 하이웍스 로그인
+#### 관리자 페이지 접근 후 ID/PW 로그인
 
 ```
-URL : http://pubsdk.igamepub.co.kr/
+URL : http://pubsdk.igamepub.co.kr/Main/Login/{Appid}
 ```
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/01.png?raw=true)
 
-#### 신규 로그인 일 경우 접근 권한 요청
+#### 접근 권한 요청
 
 * 권한 요청
-  * 게임명 / 하이웍스ID / 팀명 / 이름 => 시스템팀에 전달 후 권한 할당 요청
+  * 게임명 / ID / 팀명 / 이름 => 시스템팀에 전달 후 권한 할당 요청
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/02.png?raw=true)
 
@@ -27,43 +27,6 @@ URL : http://pubsdk.igamepub.co.kr/
 * 프로젝트가 보이지 않을 경우에는 시스템팀에 계정별 프로젝트 등록 요청을 해주세요.
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/03.png?raw=true)
-
-## 설정
-
-### App설정
-
-#### App 기초 정보 설정 및 연동 정보 관리
-
-![](https://github.com/gamepubcorp/guide/blob/main/image-admin/04.png?raw=true)
-
-* 기본정보
-  * AppName : 게임명
-  * 스토어 : 출시 스토어 선택
-  * 사용언어 : 게임에서 지원 하고자 하는 언어를 선택 합니다.
-  * 대표언어 : 사용언어 중 기본이 되는 언어를 선택 합니다.
-    * 예시 > 푸쉬 발송 시 사용자의 언어와 사용언어가 불일치 할 경우 대표 언어로 메시지 전달
-* 게임서버
-  * 결제보상URL : 결제 검증 후 아이템 지급 호출 URL
-  * 쿠폰보상URL : 회원이 쿠폰 사용 후 아이템 지급 호출 URL
-* Firebase
-  * 서비스계정 : 푸쉬 메시지 발송을 위한 Firebase 정보 업로드
-* PackageName : 스토어 패키지명
-* 기타설정
-  * Login Token 검증 : 2차 로그인 검증 실패 시 계정 차단 여부
-  * 계정탈퇴 철회 가능일 일반 / 게스트 : 회원이 계정탈퇴 요청 후 철회 가능한 유효일자
-
-## 버전관리
-
-**앱의 버전이 등록된 버전코드 보다 낮은 경우 스토어의 업데이트 화면으로 유도합니다.**
-
-![](https://github.com/gamepubcorp/guide/blob/main/image-admin/05.png?raw=true)
-
-* 기본정보
-  * 사용여부 : 일시적 중지 / 활성화
-  * 강제/권고 : 강제시 게임 접속을 불가 하며, 링크경로로 유도 합니다.
-  * 버전명, 버전코드 : 버전의 정보를 입력 합니다.
-  * 링크경로 : 인게임에서 버튼 클릭시 이동하는 경로를 입력 합니다.
-* 업데이트 내역 : 변경된 이력을 안내 합니다.
 
 ## 통계
 
@@ -134,6 +97,9 @@ URL : http://pubsdk.igamepub.co.kr/
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/12.png?raw=true)
 
+* 내려받기
+  * 설정된 검색 정보를 기준으로 회원정보 CSV 다운로드 가능.
+
 #### 회원상세
 
 **회원목록의 '계정ID'를 클릭하면 회원의 상세정보 조회 및 관리가 가능**
@@ -152,24 +118,6 @@ URL : http://pubsdk.igamepub.co.kr/
 
 ### 결제
 
-#### 인앱상품
-
-**스토어에 등록된 상품정보와 1:1 매칭되어야 구매 및 통계 조회가 가능함**
-
-* 매칭되어야 하는 필수 정보 : 스토어, 상품ID
-* PubSDK에서 내부적으로 사용되는 부가정보
-  * 게임상품ID, 상품명, 설명
-  * 가격은 원 단위로 환산하여 등록 필요. 원 단위 가격을 기준으로 매출 계산함.
-
-![](https://github.com/gamepubcorp/guide/blob/main/image-admin/14.png?raw=true)
-
-#### 스토어별 인앱 상품 등록 관리
-
-![](https://github.com/gamepubcorp/guide/blob/main/image-admin/15.png?raw=true)
-
-* 스토어상품ID : 스토어 상품ID와 매칭
-* 가격 : 표기 금액을 기준으로 결제 금액 통계에 사용됨
-
 #### 구매내역
 
 **스토어 구매 내역 조회 화면**
@@ -182,6 +130,34 @@ URL : http://pubsdk.igamepub.co.kr/
   * 결제완료 : 영수증 검증이 완료된 상태
   * 아이템지급 : 게임 서버로 아이템 지급 처리 완료
   * 개인환불 : 구글 사용자환불조회 API를 통하여 환불 처리된 상태
+* 상세보기
+  * 아이템 지급 요청 결과를 확인 및 재지급 요청 가능
+* 내려받기
+  * 검색 항목을 통해 결제이력 CSV 다운로드 가능
+
+#### 인앱상품
+
+**스토어에 등록된 상품정보와 1:1 매칭되어야 구매 및 통계 조회가 가능함**
+
+* 매칭되어야 하는 필수 정보 : 스토어, 상품ID
+* PubSDK에서 내부적으로 사용되는 부가정보
+  * 게임상품ID, 상품명, 설명
+  * 가격은 원 단위로 환산하여 등록 필요. 원 단위 가격을 기준으로 매출 계산함.
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/14.png?raw=true)
+
+* 내려받기
+  * 등록 항목 CSV 다운로드 가능
+* 대량등록
+  * [샘플내려받기] CSV 파일 다운로드 후 정보 입력하여 대량 업로드 가능
+
+#### 스토어별 인앱 상품 등록 관리
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/15.png?raw=true)
+
+* 스토어상품ID : 스토어 상품ID와 매칭
+* 가격 : 표기 금액을 기준으로 결제 금액 통계에 사용됨
+
 
 #### 구글개인환불 목록
 
@@ -190,7 +166,7 @@ URL : http://pubsdk.igamepub.co.kr/
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/17.png?raw=true)
 
 {% hint style="info" %}
-구글 개인 환불자 조회 API 를 통한 데이터 동기화 (매시간 10분 동기화 진행)
+구글 개인 환불자 조회 API 를 통한 데이터 동기화 (1시간 단위 동기화 진행)
 {% endhint %}
 
 #### 구글 개인 환불자 제재 설정
@@ -221,12 +197,10 @@ PubSDK API - Ping 호출 시 회원 정보 블럭 상태 조회 결과 반환을
 
 ##### 등록
 
-**언어, 플랫폼, 야간푸쉬동의, 발송시간에 맞추어 기존에 등록된 Firebase Topic 대상을 판별하여 발송**
+**언어, 플랫폼, 야간푸쉬동의, 발송시간에 맞추어 로그인 시 등록된 정보를 대상을 판별하여 발송**
 
 {% hint style="info" %}
-Firebase Topic - PushToken 등록/삭제
-디바이스 PushToken 을 계정 로그인, 설정 변경 진행 시 Topic 기준으로 Firebase에 등록/삭제
-(반영 시간 약 0 ~ 2 시간 소요됨. )
+마지막 로그인이 2달이 지나면 Push 발송 대상에서 제거됨.
 {% endhint %}
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/20.png?raw=true)
@@ -247,7 +221,7 @@ Firebase Topic - PushToken 등록/삭제
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/22.png?raw=true)
 
 {% hint style="info" %}
-매일 저녁 10시에 다음날 발송이 필요한 푸쉬 생성 되며  생성된 항목은 일반관리 목록에서 조회 / 삭제 가능
+매일 저녁 10시에 다음날 발송이 필요한 푸쉬 생성 되며 생성된 항목은 일반관리 목록에서 조회 / 삭제 가능
 {% endhint %}
 
 ### 공지사항
@@ -302,28 +276,6 @@ Firebase Topic - PushToken 등록/삭제
 IP관리 메뉴에 클라이언트 IP가 허용IP로 등록이 되어 있을 경우 로그인(접속)을 허용 합니다.
 {% endhint %}
 
-### IP관리
-
-#### 목록
-
-**특정 IP에 대해 접속을 허용 하거나 차단 하는 목록을 보여 줍니다.**
-
-![](https://github.com/gamepubcorp/guide/blob/main/image-admin/29.png?raw=true)
-
-#### 등록
-
-**IP 허용/차단 등록 관리 **
-
-![](https://github.com/gamepubcorp/guide/blob/main/image-admin/30.png?raw=true)
-
-* IP 허용 등록 하여 점검 시간에 접속 설정 가능
-* IP 차단 등록 하여 로그인 불가 하도록 설정 가능
-* 사용안함 설정으로 일시적 사용 해지 가능
-
-{% hint style="info" %}
-로그인 시 허용IP > 차단IP > 점검 순으로 진행 됩니다.
-{% endhint %}
-
 ### 고객센터
 
 #### 고객센터 URL 등록 관리
@@ -354,6 +306,73 @@ IP관리 메뉴에 클라이언트 IP가 허용IP로 등록이 되어 있을 경
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/34.png?raw=true)
 
+
+## 설정
+
+### App설정
+
+#### App 기초 정보 설정 및 연동 정보 관리
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/04.png?raw=true)
+
+* 기본정보
+  * AppName : 게임명
+  * 스토어 : 출시 스토어 선택
+  * 사용언어 : 게임에서 지원 하고자 하는 언어를 선택 합니다.
+  * 대표언어 : 사용언어 중 기본이 되는 언어를 선택 합니다.
+    * 예시 > 푸쉬 발송 시 사용자의 언어와 사용언어가 불일치 할 경우 대표 언어로 메시지 전달
+* 게임서버 - 허용IP 설정을 통해 Test <-> Real URL으로 호출 가능
+  * 결제보상URL : 결제 검증 후 아이템 지급 호출 URL
+  * 쿠폰보상URL : 회원이 쿠폰 사용 후 아이템 지급 호출 URL
+* Firebase
+  * 서비스계정 : 푸쉬 메시지 발송을 위한 Firebase 정보 업로드
+* PackageName : 스토어 패키지명
+* 기타설정
+  * 계정탈퇴 철회 가능일 일반 / 게스트 : 회원이 계정탈퇴 요청 후 철회 가능한 유효일자
+
+### 버전관리
+
+**앱의 버전이 등록된 버전코드 보다 낮은 경우 스토어의 업데이트 화면으로 유도합니다.**
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/05.png?raw=true)
+
+* 기본정보
+  * 사용여부 : 일시적 중지 / 활성화
+  * 강제/권고 : 강제시 게임 접속을 불가 하며, 링크경로로 유도 합니다.
+  * 버전명, 버전코드 : 버전의 정보를 입력 합니다.
+  * 링크경로 : 인게임에서 버튼 클릭시 이동하는 경로를 입력 합니다.
+* 업데이트 내역 : 변경된 이력을 안내 합니다.
+
+### 접속IP관리
+
+#### 허용IP
+
+**특정 IP에 대해 허용 하는 목록을 보여 줍니다.**
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/29.png?raw=true)
+
+* 타입
+  * 로그인 : 설정된 IP로 접속 시 [로그인차단, 점검]을 무시합니다.
+  * 점검 : 설정된 IP로 접속 시 [점검]을 무시합니다.
+  * App버전 : 설정된 IP로 접속 시 [App버전]을 무시합니다.
+  * 아이템URL : 설정된 IP로 접속 후 [결제]/[쿠폰] 아이템 지급 요청시 [App설정]에 입력된 Test URL 주소로 호출 됩니다.
+* 사용안함 설정으로 일시적 사용 해지 가능
+
+#### 차단IP
+
+**특정 IP에 대해 차단 하는 목록을 보여 줍니다.**
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/30.png?raw=true)
+
+* 타입
+  * 로그인 : 설정된 IP로 접속 시 [로그인]을 차단 합니다.
+* 사용안함 설정으로 일시적 사용 해지 가능
+
+{% hint style="info" %}
+[허용IP - 로그인]으로 설정된 IP는 [차단IP] 처리가 진행되지 않습니다.
+{% endhint %}
+
+
 ## 게임
 
 ### 쿠폰
@@ -363,6 +382,8 @@ IP관리 메뉴에 클라이언트 IP가 허용IP로 등록이 되어 있을 경
 **등록된 쿠폰 목록을 확인 하거나 예약, 생성, 사용된 수량을 확인**
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/35.png?raw=true)
+
+* 진행중인 항목은 쿠폰 CSV 다운로드 가능
 
 #### 등록
 
@@ -382,6 +403,7 @@ IP관리 메뉴에 클라이언트 IP가 허용IP로 등록이 되어 있을 경
     * 신규, 추가 발급 시 예약 (예약수량 증가)되며 1시간 단위로 예약 순서에 맞추어 생성
 * 지급보상
   * Json 형식으로 항목이 추가 되도록 구성 되어, 쿠폰 사용시 설정된 쿠폰보상URL 으로 전달
+  * 지원되지 않는 항목은 [추가] 하여 텍스트 수정 후 [저장]
 
 ### 로그인검증실패로그
 
@@ -393,3 +415,11 @@ IP관리 메뉴에 클라이언트 IP가 허용IP로 등록이 되어 있을 경
 
 * 상세보기 기능으로 로그인 검증 데이터 상세 조회
 * 조회 데이터를 기준으로 DB 회원 정보와 매칭 하여 이상 유무 체크 가능
+
+### 원격구성
+
+#### 목록
+
+**Game Client에서 사용되는 Key/Value 형식의 문자열을 등록/관리**
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/38.png?raw=true)
