@@ -3,6 +3,18 @@
 
 ## PubSDK 서버 > 게임 서버 호출
 
+**보안을 위하여 PubSDK 서버 IP에서 호출된 요청만 처리 되도록 방화벽을 설정 하세요..**
+
+{% hint style="warning" %}
+Server Out Bound IP List
+
+PubSDK Admin
+3.36.142.126
+
+PubSDK API
+3.37.53.89
+{% endhint %}
+
 ### 결제 - 아이템 지급 호출
 
 **결제 완료 및 영수증 검증 후  PubSDK 서버에서 게임 서버로 아이템 지급을 위해 HTTP 요청을 합니다.**
@@ -31,6 +43,7 @@ Body :
 
 {% hint style="info" %}
 {URL} 항목은 PubSDK 관리자 - 설정 - App설정 - 게임서버 - 결제보상URL 항목에 입력 되어야 합니다.
+아이템이 중복 지급되지 않도록 [주문번호]를 기준으로 예외 처리를 권유 드립니다.
 {% endhint %}
 
 | Attribute     | Type   | Length | Description               |
@@ -90,7 +103,7 @@ Body :
 | serverid  | string | 10     | 쿠폰 호출시 입력값 전달 |
 | playerid  | string | 100    | 쿠폰 호출시 입력값 전달 |
 | etc       | string | 500    | 쿠폰 호출시 입력값 전달 |
-| item      | string | 500    | 지급 아이템 (JSON) - 예시 > <br> [{"type":"EXP","code":"0","count":100}, <br> {"type":"GOLD","code":"0","count":200}] |
+| reward    | string | 1000   | 지급 아이템 (JSON) - 예시 > <br> [{"type":"EXP","code":"0","count":100}, <br> {"type":"GOLD","code":"0","count":200}] |
 
 **Response**
 ```
