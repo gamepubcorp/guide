@@ -19,6 +19,13 @@ URL : http://pubsdk.igamepub.co.kr/Main/Login/{Appid}
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/02.png?raw=true)
 
+#### 비밀번호 변경
+
+* 최초 로그인시 비밀번호 변경 필요
+* 메뉴 - [비밀번호 변경] 가능
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-admin/02_pw.png?raw=true)
+
 ## 프로젝트
 
 ### 프로젝트 목록
