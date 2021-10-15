@@ -117,3 +117,13 @@
 https://developer.apple.com/documentation/appstoreservernotifications
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-service/05_01_Apple_Server_Notification_URL.png?raw=true)
+
+## 6. One Store Oauth 인증 정보
+
+#### 6-1. Oauth 인증 정보(ClientID, ClientSecret) 전달
+
+https://dev.onestore.co.kr/icms-app/contents/contentlist
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-service/06_01_Oauth_%EC%9D%B8%EC%A6%9D_%EC%A0%95%EB%B3%B4.png?raw=true)
+
+![](https://github.com/gamepubcorp/guide/blob/main/image-service/06_02_Oauth_%EC%9D%B8%EC%A6%9D_%EC%A0%95%EB%B3%B4_%EB%B3%B5%EC%82%AC.png?raw=true)
