@@ -6,7 +6,7 @@
 **보안을 위하여 PubSDK 서버 IP에서 호출된 요청만 처리 되도록 방화벽을 설정 하세요..**
 
 {% hint style="warning" %}
-Server Out Bound IP List
+Server Out Bound IP List  (서버 설정에 따라 변경 될 수 있습니다.)
 
 PubSDK Admin
 3.36.142.126
@@ -17,7 +17,7 @@ PubSDK API
 
 ### 결제 - 아이템 지급 호출
 
-**결제 완료 및 영수증 검증 후  PubSDK 서버에서 게임 서버로 아이템 지급을 위해 HTTP 요청을 합니다.**
+**결제 완료 및 영수증 검증 후 PubSDK 서버에서 게임 서버로 아이템 지급을 위해 HTTPS 요청을 합니다.**
 
 ![Purchase Flow](https://github.com/gamepubcorp/guide/blob/main/image-server/01_purchase_flow.png?raw=true)
 
@@ -76,7 +76,7 @@ Body :
 
 ### 쿠폰 - 아이템 지급 호출
 
-**쿠폰 사용 후에 PubSDK 서버에서 게임 서버로 아이템 지급을 위해 HTTP 요청을 합니다.**
+**쿠폰 사용 후에 PubSDK서버에서 게임 서버로 아이템 지급을 위해 HTTP 요청을 합니다.**
 
 **Request**
 
@@ -137,7 +137,7 @@ Body :
 **Request**
 ```
 Method : POST
-URL : https://pubsdkapi.igamepub.co.kr/api/game/loginauth
+URL : https://pubsdkapi.igamepub.co.kr/game/loginauth/{appid}/
 Header : "content-type: application/json"
 Body : 
 {
@@ -164,16 +164,16 @@ Body :
 { code = 1, message = "OK" }
 
 실패 :  
-{ code = -1, message = "Request Data Check" }
-{ code = -2, message = "AuthToken Data Error" }
-{ code = -3, message = "AuthToken Expired" }
-{ code = -4, message = "Request Data Error" }
-{ code = -5, message = "User Not found" }
+{ ResultCode = -1, Message = "Request Data Check" }
+{ ResultCode = -2, Message = "AuthToken Data Error" }
+{ ResultCode = -3, Message = "AuthToken Expired" }
+{ ResultCode = -4, Message = "Request Data Error" }
+{ ResultCode = -5, Message = "User Not found" }
 ```
 
-| Attribute | Type   | Length | Description       |
-| --------- | :----: | -----: | ----------------- |
-| code      | int    | 1      | 1:성공            |
-| message   | string | 100    | 오류 발생 시 내용 |
+| Attribute  | Type   | Length | Description       |
+| ---------- | :----: | -----: | ----------------- |
+| ResultCode | int    | 1      | 1:성공            |
+| Message    | string | 100    | 오류 발생 시 내용 |
 
 ​

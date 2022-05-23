@@ -7,7 +7,7 @@
 #### 관리자 페이지 접근 후 ID/PW 로그인
 
 ```
-URL : http://pubsdk.igamepub.co.kr/Main/Login/{Appid}
+URL : http://pubsdk.igamepub.co.kr/Main/Login/{Appid}/
 ```
 
 ![](https://github.com/gamepubcorp/guide/blob/main/image-admin/01.png?raw=true)
